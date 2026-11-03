@@ -144,3 +144,11 @@ The release gate requires executable tests, adversarial negative cases, privacy/
 ## License
 
 Apache License 2.0. See [`LICENSE`](LICENSE).
+
+## Art × Science | The Creative Museum
+
+Guardian Assurance is the museum's evidence-to-publication exhibit. It demonstrates reproducible release checks, decision receipts and safe-stop behavior; a passing configured check is not blanket certification of every historical or operational risk.
+
+Explore the [temporary LuckyGitHub777 Art × Science Museum preview](https://luckygithub777.github.io/golden-ratio-frequency-lab/museum-preview/) and its safe Origins Lab. This is a public visitor preview within an existing Pages site; it is not yet the final dedicated museum. The underlying private workshops and source histories are not exposed through this link. Full signed-out browser acceptance remains separately tracked.
+
+*Imagination opens the door. Engineering makes it real. Evidence keeps us honest.*
