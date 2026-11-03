@@ -1,0 +1,154 @@
+name: Guardian Reusable Publication Gate
+
+on:
+  workflow_call:
+    inputs:
+      profile:
+        description: "Guardian policy profile: development, static-web, baseline, release, or python."
+        required: false
+        default: release
+        type: string
+      upload_receipt:
+        description: Upload the exact-revision Guardian receipt as a workflow artifact.
+        required: false
+        default: true
+        type: boolean
+    outputs:
+      result:
+        description: Guardian result for the verified revision.
+        value: ${{ jobs.guardian.outputs.result }}
+      revision:
+        description: Full Git revision verified by Guardian.
+        value: ${{ jobs.guardian.outputs.revision }}
+      policy_digest:
+        description: SHA-256 digest of the Guardian policy used.
+        value: ${{ jobs.guardian.outputs.policy_digest }}
+
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: Guardian policy profile.
+        required: true
+        default: release
+        type: choice
+        options:
+          - development
+          - static-web
+          - baseline
+          - release
+          - python
+      upload_receipt:
+        description: Upload the Guardian receipt.
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  guardian:
+    name: Guardian
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      result: ${{ steps.receipt.outputs.result }}
+      revision: ${{ steps.receipt.outputs.revision }}
+      policy_digest: ${{ steps.receipt.outputs.policy_digest }}
+
+    steps:
+      - name: Checkout caller revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Checkout Guardian verifier
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ job.workflow_repository }}
+          ref: ${{ job.workflow_sha }}
+          path: .guardian-tool
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13"
+
+      - name: Install Guardian
+        run: python -m pip install ./.guardian-tool
+
+      - name: Select policy
+        id: policy
+        shell: bash
+        env:
+          GUARDIAN_PROFILE: ${{ inputs.profile }}
+        run: |
+          set -euo pipefail
+          case "$GUARDIAN_PROFILE" in
+            development)
+              policy="$GITHUB_WORKSPACE/.guardian-tool/policies/development.yaml"
+              ;;
+            static-web)
+              policy="$GITHUB_WORKSPACE/.guardian-tool/policies/static-web.yaml"
+              ;;
+            baseline)
+              policy="$GITHUB_WORKSPACE/.guardian-tool/policies/baseline.yaml"
+              ;;
+            release)
+              policy="$GITHUB_WORKSPACE/.guardian-tool/policies/release.yaml"
+              ;;
+            python)
+              policy="$GITHUB_WORKSPACE/.guardian-tool/policies/default.yaml"
+              ;;
+            *)
+              printf 'Unsupported Guardian profile: %s\n' "$GUARDIAN_PROFILE" >&2
+              exit 2
+              ;;
+          esac
+          echo "path=$policy" >> "$GITHUB_OUTPUT"
+
+      - name: Verify exact caller revision
+        run: |
+          guardian-pa verify . \
+            --policy "${{ steps.policy.outputs.path }}" \
+            --receipt "$RUNNER_TEMP/guardian-receipt.json"
+
+      - name: Validate receipt binding
+        id: receipt
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          receipt = json.loads(
+              (Path(os.environ["RUNNER_TEMP"]) / "guardian-receipt.json").read_text()
+          )
+
+          if receipt["result"] != "VERIFIED":
+              raise SystemExit("Guardian receipt is not VERIFIED")
+          if receipt["revision"] != os.environ["GITHUB_SHA"]:
+              raise SystemExit(
+                  f"Receipt revision {receipt['revision']} does not match GITHUB_SHA "
+                  f"{os.environ['GITHUB_SHA']}"
+              )
+
+          output = Path(os.environ["GITHUB_OUTPUT"])
+          with output.open("a", encoding="utf-8") as handle:
+              handle.write(f"result={receipt['result']}\n")
+              handle.write(f"revision={receipt['revision']}\n")
+              handle.write(f"policy_digest={receipt['policy_digest']}\n")
+
+          print("Guardian receipt binding: PASS")
+          PY
+
+      - name: Upload exact-revision receipt
+        if: ${{ inputs.upload_receipt }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: guardian-receipt-${{ github.sha }}
+          path: ${{ runner.temp }}/guardian-receipt.json
+          if-no-files-found: error
+          retention-days: 30

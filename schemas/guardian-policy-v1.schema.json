@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "guardian-policy-v1",
+  "title": "Guardian Policy v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "repository",
+    "identity",
+    "environment",
+    "secrets",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "guardian-policy-v1"
+    },
+    "version": {
+      "type": "string",
+      "const": "1"
+    },
+    "repository": {
+      "type": "object",
+      "required": [
+        "required_files",
+        "forbidden_tracked_names",
+        "forbidden_tracked_segments",
+        "max_text_bytes"
+      ],
+      "properties": {
+        "required_files": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "forbidden_tracked_names": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "forbidden_tracked_segments": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "max_text_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16777216
+        }
+      },
+      "additionalProperties": false
+    },
+    "identity": {
+      "type": "object",
+      "required": ["forbidden_author_fragments"],
+      "properties": {
+        "forbidden_author_fragments": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "required": ["block_absolute_user_paths"],
+      "properties": {
+        "block_absolute_user_paths": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "secrets": {
+      "type": "object",
+      "required": ["enabled_rules"],
+      "properties": {
+        "enabled_rules": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["require_git", "require_clean_tracked_worktree"],
+      "properties": {
+        "require_git": {"type": "boolean"},
+        "require_clean_tracked_worktree": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

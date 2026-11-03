@@ -1,0 +1,47 @@
+name: Optional Guardian Publication Assurance
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: Select the policy for this deliberate assurance run.
+        required: true
+        default: release
+        type: choice
+        options:
+          - development
+          - static-web
+          - baseline
+          - release
+          - python
+  public:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  prepublication:
+    name: On-demand pre-publication gate
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    uses: OWNER/guardian-assurance-public/.github/workflows/guardian-reusable.yml@<PINNED_GUARDIAN_SHA>
+    with:
+      profile: ${{ inputs.profile }}
+      upload_receipt: true
+
+  public-audit:
+    name: Post-publication visibility audit
+    if: ${{ github.event_name == 'public' }}
+    uses: OWNER/guardian-assurance-public/.github/workflows/guardian-reusable.yml@<PINNED_GUARDIAN_SHA>
+    with:
+      profile: baseline
+      upload_receipt: true
+
+  release-audit:
+    name: Post-release audit
+    if: ${{ github.event_name == 'release' }}
+    uses: OWNER/guardian-assurance-public/.github/workflows/guardian-reusable.yml@<PINNED_GUARDIAN_SHA>
+    with:
+      profile: release
+      upload_receipt: true

@@ -1,0 +1,54 @@
+{
+  "schema": "guardian-policy-v1",
+  "version": "1",
+  "repository": {
+    "required_files": [
+      "README.md",
+      "LICENSE",
+      "SECURITY.md",
+      "CONTRIBUTING.md",
+      "CHANGELOG.md"
+    ],
+    "forbidden_tracked_names": [
+      ".env",
+      ".DS_Store",
+      "Thumbs.db"
+    ],
+    "forbidden_tracked_segments": [
+      "__pycache__",
+      ".pytest_cache",
+      ".venv",
+      "venv",
+      ".idea",
+      ".vscode"
+    ],
+    "max_text_bytes": 1048576
+  },
+  "identity": {
+    "forbidden_author_fragments": [
+      "@localhost",
+      ".local",
+      "@example.com",
+      "root@",
+      "user@"
+    ]
+  },
+  "environment": {
+    "block_absolute_user_paths": true
+  },
+  "secrets": {
+    "enabled_rules": [
+      "github_classic",
+      "github_fine_grained",
+      "aws_access_key",
+      "private_key",
+      "slack_token",
+      "stripe_live_key",
+      "google_api_key"
+    ]
+  },
+  "provenance": {
+    "require_git": true,
+    "require_clean_tracked_worktree": true
+  }
+}

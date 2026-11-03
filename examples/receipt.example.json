@@ -1,0 +1,39 @@
+{
+  "schema": "guardian-receipt-v1",
+  "guardian_version": "1.0.0",
+  "policy_version": "1",
+  "policy_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "generated_utc": "2030-01-01T00:00:00Z",
+  "mode": "READ_ONLY",
+  "network": "DISABLED_BY_DESIGN",
+  "revision": "0000000000000000000000000000000000000000",
+  "tree": "1111111111111111111111111111111111111111",
+  "checks": {
+    "identity": {
+      "status": "PASS",
+      "finding_count": 0,
+      "findings": []
+    },
+    "environment": {
+      "status": "PASS",
+      "finding_count": 0,
+      "findings": []
+    },
+    "secrets": {
+      "status": "PASS",
+      "finding_count": 0,
+      "findings": []
+    },
+    "repository": {
+      "status": "PASS",
+      "finding_count": 0,
+      "findings": []
+    },
+    "provenance": {
+      "status": "PASS",
+      "finding_count": 0,
+      "findings": []
+    }
+  },
+  "result": "VERIFIED"
+}

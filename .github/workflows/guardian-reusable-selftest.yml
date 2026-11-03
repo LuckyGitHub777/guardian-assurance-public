@@ -1,0 +1,21 @@
+name: Guardian Reusable Gate Self-Test
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/guardian-reusable.yml"
+      - ".github/workflows/guardian-reusable-selftest.yml"
+      - "guardian_assurance/**"
+      - "policies/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guardian-reusable:
+    name: Reusable gate
+    uses: ./.github/workflows/guardian-reusable.yml
+    with:
+      profile: python
+      upload_receipt: true
