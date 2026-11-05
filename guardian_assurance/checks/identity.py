@@ -20,5 +20,5 @@ def run(root: Path, policy: dict) -> CheckResult:
     if findings:
         return CheckResult("identity", "FAIL", "publication identity requires attention", tuple(findings))
 
-    domain = email.rsplit("@", 1)[-1] if "@" in email else "unknown"
-    return CheckResult("identity", "PASS", "Git author identity is not an obvious local/test placeholder", metadata={"author_domain": domain})
+    # Do not retain a caller's author domain in diagnostic metadata.
+    return CheckResult("identity", "PASS", "Git author identity is not an obvious local/test placeholder")
