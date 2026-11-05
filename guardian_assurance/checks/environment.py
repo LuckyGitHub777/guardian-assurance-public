@@ -13,7 +13,9 @@ def run(root: Path, policy: dict) -> CheckResult:
         return CheckResult("environment", "PASS", "absolute user-path check disabled by policy")
 
     max_bytes = int(policy["repository"].get("max_text_bytes", 1048576))
-    files, _ = tracked_files(root)
+    files, verified = tracked_files(root)
+    if not verified:
+        return CheckResult("environment", "INDETERMINATE", "tracked Git file inventory unavailable")
     findings: list[Finding] = []
     skipped_text = 0
     for rel in files:

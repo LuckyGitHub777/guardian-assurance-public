@@ -26,7 +26,9 @@ def run(root: Path, policy: dict) -> CheckResult:
         return CheckResult("secrets", "INDETERMINATE", "policy references unknown secret-detection rules")
 
     max_bytes = int(policy["repository"].get("max_text_bytes", 1048576))
-    files, _ = tracked_files(root)
+    files, verified = tracked_files(root)
+    if not verified:
+        return CheckResult("secrets", "INDETERMINATE", "tracked Git file inventory unavailable")
     findings: list[Finding] = []
     skipped_text = 0
     for rel in files:

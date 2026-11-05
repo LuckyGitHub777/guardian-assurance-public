@@ -9,7 +9,9 @@ def run(root: Path, policy: dict) -> CheckResult:
     cfg = policy["repository"]
     findings: list[Finding] = []
 
-    files, _ = tracked_files(root)
+    files, verified = tracked_files(root)
+    if not verified:
+        return CheckResult("repository", "INDETERMINATE", "tracked Git file inventory unavailable")
     tracked = {rel.as_posix() for rel in files}
 
     for required in cfg.get("required_files", []):
