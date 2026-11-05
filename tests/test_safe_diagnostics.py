@@ -34,7 +34,7 @@ def test_verbose_cli_and_receipt_never_echo_matched_file_path(clean_repo, tmp_pa
 def test_json_output_redacts_path_and_free_text(clean_repo, capsys):
     filename = "synthetic-file-context-xyz.txt"
     (clean_repo / filename).write_text(
-        "-----BEGIN PRIVATE KEY-----\nsynthetic\n", encoding="utf-8")
+        ("-----BEGIN " + "PRIVATE KEY-----\nsynthetic\n"), encoding="utf-8")
     git(clean_repo, "add", filename)
     git(clean_repo, "commit", "-m", "synthetic private key marker")
     status = main(["verify", str(clean_repo), "--json"])
