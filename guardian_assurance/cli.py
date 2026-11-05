@@ -45,7 +45,7 @@ def main(argv: list[str] | None = None) -> int:
             print("GUARDIAN\n")
             print("Verification could not complete")
             print("\nRESULT: INDETERMINATE")
-            print(f"Reason: policy error ({exc})", file=sys.stderr)
+            print("Reason: policy error", file=sys.stderr)
         return 2
 
     if args.receipt:
@@ -61,7 +61,7 @@ def main(argv: list[str] | None = None) -> int:
         try:
             write_receipt(verification.receipt, receipt_path)
         except OSError as exc:
-            print(f"Could not write receipt: {exc}", file=sys.stderr)
+            print("Could not write receipt.", file=sys.stderr)
             return 2
 
     if args.as_json:
@@ -74,11 +74,10 @@ def main(argv: list[str] | None = None) -> int:
             print(f"{symbols[result.status]} {result.name.title()}: {result.status}")
             if args.verbose:
                 for finding in result.findings:
-                    suffix = f" [{finding.path}]" if finding.path else ""
-                    print(f"  - {finding.code}{suffix}")
+                    print(f"  - {finding.code}")
         print("\nEvidence: generated")
         if receipt_path:
-            print(f"Receipt: {receipt_path}")
+            print("Receipt: written to requested location")
         print(f"\nRESULT: {verification.result}")
 
     return EXIT[verification.result]
