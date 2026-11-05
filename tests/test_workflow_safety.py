@@ -32,3 +32,16 @@ def test_example_caller_keeps_guardian_opt_in_at_publication_boundary():
     assert "profile: ${{ inputs.profile }}" in workflow
     assert "profile: baseline" in workflow
     assert "profile: release" in workflow
+
+
+def test_public_workflow_package_install_keeps_console_output_minimal():
+    root = Path(__file__).resolve().parents[1]
+    paths = {
+        ".github/workflows/verify.yml": "python -m pip install --quiet '.[dev]'",
+        ".github/workflows/guardian-reusable.yml": "python -m pip install --quiet ./.guardian-tool",
+    }
+    for name, command in paths.items():
+        source = (root / name).read_text(encoding="utf-8")
+        assert source.count(command) == 1
+        assert "python -m pip install '.[dev]'" not in source
+        assert "python -m pip install ./.guardian-tool" not in source
