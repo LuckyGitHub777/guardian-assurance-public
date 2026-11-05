@@ -17,10 +17,9 @@ def build_receipt(policy: dict, results: list[CheckResult], result: str) -> dict
         checks[r.name] = {
             "status": r.status,
             "finding_count": len(r.findings),
-            "findings": [
-                {k: v for k, v in {"code": f.code, "path": f.path, "detail": f.detail}.items() if v is not None}
-                for f in r.findings
-            ],
+            # Export only stable finding codes. Paths and free-form details
+            # can contain caller-controlled names or identifying context.
+            "findings": [{"code": f.code} for f in r.findings],
         }
 
     return {
