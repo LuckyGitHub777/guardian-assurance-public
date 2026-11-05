@@ -13,4 +13,6 @@ def test_receipt_redacts_secret_and_absolute_path(clean_repo):
     assert fake not in rendered
     assert ("/" + "home/alice") not in rendered
     assert "alice" not in rendered.lower()
-    assert "bad.txt" in rendered
+    assert "bad.txt" not in rendered
+    assert receipt["checks"]["secrets"]["finding_count"] >= 1
+    assert all(set(item) == {"code"} for item in receipt["checks"]["secrets"]["findings"])
