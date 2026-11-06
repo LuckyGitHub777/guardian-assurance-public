@@ -156,3 +156,5 @@ Apache License 2.0. See [`LICENSE`](LICENSE).
 ## Independent public works
 
 Browse the [selected public collection](SELECTED_PUBLIC_WORKS.md) of standalone projects. These are independent of Guardian; listing them does not assert Guardian certification or grant additional reuse rights.
+
+For an optional searchable, single-file offline view, [download the HTML gallery](SELECTED_PUBLIC_WORKS.html) using GitHub's **Download raw file** control, then open it locally. GitHub's normal source viewer does not run the HTML interface. The original Markdown index remains directly browsable on GitHub.
