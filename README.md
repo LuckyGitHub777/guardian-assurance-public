@@ -155,8 +155,8 @@ Apache License 2.0. See [`LICENSE`](LICENSE).
 
 ## Independent public works
 
-Browse the [selected public collection](SELECTED_PUBLIC_WORKS.md) of standalone projects. These are independent of Guardian; listing them does not assert Guardian certification or grant additional reuse rights.
+Explore the [searchable public collection](https://luckygithub777.github.io/guardian-assurance-public/) or browse the [GitHub-readable index](SELECTED_PUBLIC_WORKS.md) of **34 independently published source repositories**. These projects are independent of Guardian: inclusion does not assert Guardian certification, rights clearance, a common license, or that every work has a separately hosted app.
 
-For an optional searchable, single-file offline view, [download the HTML gallery](SELECTED_PUBLIC_WORKS.html) using GitHub's **Download raw file** control, then open it locally. GitHub's normal source viewer does not run the HTML interface. The original Markdown index remains directly browsable on GitHub.
+The collection is a static, dependency-free gallery with local search and category filters. For offline use, [download the single-file HTML gallery](SELECTED_PUBLIC_WORKS.html) from GitHub and open it locally. If the hosted entry is unavailable, the Markdown index above remains directly browsable without JavaScript.
 
-A root [`index.html`](index.html) now links directly into the **same existing** self-contained gallery when this repository is served by a static site host. It is a small redirect, not a duplicate application or a new hosted-service dependency. Hosting is **not implied** by the presence of the entrypoint; repository Pages must be separately enabled and its public URL tested before calling the web gallery live. No workflow schedule, analytics, cookies, build framework, or external API is required.
+GitHub Pages deployment was reported successful for the static collection. That publishing result does not replace signed-out browser, keyboard, or assistive-technology acceptance. No accounts, analytics, background requests, new service, or scheduled workflow are required.
