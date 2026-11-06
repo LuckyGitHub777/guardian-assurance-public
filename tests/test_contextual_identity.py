@@ -97,7 +97,7 @@ def test_short_term_never_silently_dropped_even_if_repeated(clean_repo, monkeypa
     )
     result = verify(clean_repo, load_policy())
     assert result.result == "INDETERMINATE"
-    assert "unsupported short terms" in result.receipt["checks"]["contextual_identity"]["summary"]
+    assert "unsupported short terms" in next(c.summary for c in result.checks if c.name == "contextual_identity")
 
 def test_short_invalid_context_does_not_turn_green(clean_repo, monkeypatch):
     monkeypatch.setenv("GUARDIAN_OPSEC_DENYLIST", "xx\n ")
