@@ -158,3 +158,5 @@ Apache License 2.0. See [`LICENSE`](LICENSE).
 Browse the [selected public collection](SELECTED_PUBLIC_WORKS.md) of standalone projects. These are independent of Guardian; listing them does not assert Guardian certification or grant additional reuse rights.
 
 For an optional searchable, single-file offline view, [download the HTML gallery](SELECTED_PUBLIC_WORKS.html) using GitHub's **Download raw file** control, then open it locally. GitHub's normal source viewer does not run the HTML interface. The original Markdown index remains directly browsable on GitHub.
+
+A root [`index.html`](index.html) now links directly into the **same existing** self-contained gallery when this repository is served by a static site host. It is a small redirect, not a duplicate application or a new hosted-service dependency. Hosting is **not implied** by the presence of the entrypoint; repository Pages must be separately enabled and its public URL tested before calling the web gallery live. No workflow schedule, analytics, cookies, build framework, or external API is required.
