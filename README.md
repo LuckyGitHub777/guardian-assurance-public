@@ -152,10 +152,3 @@ The release gate requires executable tests, adversarial negative cases, privacy/
 ## License
 
 Apache License 2.0. See [`LICENSE`](LICENSE).
-
-## More public work
-
-- [Gravitas Check](https://github.com/LuckyGitHub777/gravitas-check) — browser-local exploration of page clarity and structure.
-- [SSL Certificate Status Checker](https://github.com/LuckyGitHub777/ssl-certificate-status) — a small certificate-inspection utility, not a TLS trust verdict.
-
-[Browse the other public projects](https://github.com/LuckyGitHub777?tab=repositories).
