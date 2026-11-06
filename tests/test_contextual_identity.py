@@ -67,6 +67,38 @@ def test_oversized_expected_text_is_indeterminate(clean_repo, monkeypatch):
     assert result.receipt["checks"]["contextual_identity"]["status"] == "INDETERMINATE"
 
 
+
+def test_mixed_valid_and_short_private_terms_fail_closed(clean_repo, monkeypatch):
+    # A valid term must never hide an unsupported second term.
+    valid = "synthetic-marker-alpha"
+    short = "xy"
+    monkeypatch.setenv("GUARDIAN_OPSEC_DENYLIST", valid + "\n" + short)
+    monkeypatch.setenv("GUARDIAN_REQUIRE_CONTEXT", "1")
+    result = verify(clean_repo, load_policy())
+    check = result.receipt["checks"]["contextual_identity"]
+    assert result.result == "INDETERMINATE"
+    assert check["status"] == "INDETERMINATE"
+    assert valid not in str(result.receipt)
+    assert short not in str(result.receipt)
+
+
+def test_blank_lines_do_not_invalidate_valid_private_context(clean_repo, monkeypatch):
+    monkeypatch.setenv("GUARDIAN_OPSEC_DENYLIST", "\n  synthetic-marker-alpha  \n\n")
+    monkeypatch.setenv("GUARDIAN_REQUIRE_CONTEXT", "1")
+    result = verify(clean_repo, load_policy())
+    assert result.result == "VERIFIED"
+    assert result.receipt["checks"]["contextual_identity"]["status"] == "PASS"
+
+
+def test_short_term_never_silently_dropped_even_if_repeated(clean_repo, monkeypatch):
+    monkeypatch.setenv(
+        "GUARDIAN_OPSEC_DENYLIST",
+        "synthetic-marker-alpha\nxy\nxy\nother-valid-marker",
+    )
+    result = verify(clean_repo, load_policy())
+    assert result.result == "INDETERMINATE"
+    assert "unsupported short terms" in result.receipt["checks"]["contextual_identity"]["summary"]
+
 def test_short_invalid_context_does_not_turn_green(clean_repo, monkeypatch):
     monkeypatch.setenv("GUARDIAN_OPSEC_DENYLIST", "xx\n ")
     result = verify(clean_repo, load_policy())
