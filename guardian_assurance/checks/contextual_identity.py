@@ -18,11 +18,13 @@ def run(root: Path, policy: dict) -> CheckResult:
     # Bound work and reject malformed or missing required private input.
     if len(raw) > 65536:
         return CheckResult("contextual_identity", "INDETERMINATE", "private context exceeds supported size")
-    terms = tuple(dict.fromkeys(
-        term.strip().casefold()
-        for term in raw.splitlines()
-        if len(term.strip()) >= 3
-    ))
+    supplied = [term.strip() for term in raw.splitlines() if term.strip()]
+    # Do not silently drop a requested short term when longer terms also
+    # exist: that would allow a partial scan to claim full contextual PASS.
+    # Reject without emitting the private term or a filename in the receipt.
+    if any(len(term) < 3 for term in supplied):
+        return CheckResult("contextual_identity", "INDETERMINATE", "private context contains unsupported short terms")
+    terms = tuple(dict.fromkeys(term.casefold() for term in supplied))
     if len(terms) > 256:
         return CheckResult("contextual_identity", "INDETERMINATE", "too many private context terms")
     if not terms:
