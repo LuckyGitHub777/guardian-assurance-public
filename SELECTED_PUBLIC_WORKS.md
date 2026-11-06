@@ -53,3 +53,5 @@ Some repositories distribute offline tools or interactive files. See each projec
 ---
 
 This collection is intentionally static, requires no service, analytics, scheduled workflow, or external integration, and is updated only for an intentional new public release. It does not replace release-specific verification, usage rights, or privacy review.
+
+**Optional local visual gallery:** [Download the single-file HTML gallery](SELECTED_PUBLIC_WORKS.html) from GitHub's file viewer using **Download raw file**, then open it locally. This is not a hosted website; the Markdown list above is the always-accessible GitHub version. No external dependencies or telemetry are required.
