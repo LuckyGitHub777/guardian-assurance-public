@@ -152,3 +152,7 @@ The release gate requires executable tests, adversarial negative cases, privacy/
 ## License
 
 Apache License 2.0. See [`LICENSE`](LICENSE).
+
+## Independent public works
+
+Browse the [selected public collection](SELECTED_PUBLIC_WORKS.md) of standalone projects. These are independent of Guardian; listing them does not assert Guardian certification or grant additional reuse rights.
