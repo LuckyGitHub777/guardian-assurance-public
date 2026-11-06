@@ -6,6 +6,14 @@ Verify before publishing. Evidence before claims.
 
 Guardian is a local-first, read-only publication assurance tool that verifies a repository before release and produces evidence bound to the exact revision examined.
 
+## What you can do with it
+
+- **Inspect a release candidate:** check tracked content, common secret patterns, publication identity, and repository provenance without modifying the target.
+- **Understand the result:** distinguish `VERIFIED`, `ACTION REQUIRED`, and `INDETERMINATE` instead of treating an incomplete check as a pass.
+- **Keep evidence tied to the source:** write an optional receipt outside the repository so the verification does not change the revision it describes.
+
+See the [example receipt](examples/receipt.example.json) for the result format. Guardian checks only its configured policy and cannot grant rights, validate full Git history for publication, or certify security.
+
 ## Quick start
 
 From the repository root:
