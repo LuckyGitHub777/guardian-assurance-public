@@ -6,7 +6,7 @@ Some repositories also provide downloadable software or files. A website showcas
 
 ## Independent educational website
 
-- [Euler's identity: Mathematical Form and Reflection](https://luckygithub777.github.io/guardian-assurance-public/divine-architecture/) — an independent, single-page educational website, separate from the 34 public-source repository entries. This page does not publish any private manuscript or claim scientific or institutional endorsement.
+- [Euler's identity: Mathematical Form and Reflection](https://luckygithub777.github.io/guardian-assurance-public/divine-architecture/) — an independent, single-page educational website, separate from the 34 public-source repository entries. This page does not claim scientific or institutional endorsement.
 
 ## Security & assurance
 
