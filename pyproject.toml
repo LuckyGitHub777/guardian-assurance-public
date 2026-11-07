@@ -3,7 +3,7 @@ requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "guardian-publication-assurance"
+name = "guardian-assurance"
 version = "1.0.0"
 description = "Local-first, read-only publication assurance infrastructure."
 readme = "README.md"
