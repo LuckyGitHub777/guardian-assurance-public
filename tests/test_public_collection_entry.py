@@ -26,3 +26,17 @@ def test_static_entrypoint_has_no_outbound_dependency_or_unsafe_input():
     assert "http://" not in source and "https://" not in source
     assert "chatgpt.com" not in source.lower()
     assert "\\Users\\" not in source
+
+
+def test_published_browser_experiences_are_visible_in_both_collection_formats():
+    """Link separately deployed project sites while retaining exactly one repo card each."""
+    markdown = (ROOT / "SELECTED_PUBLIC_WORKS.md").read_text(encoding="utf-8")
+    html = (ROOT / "SELECTED_PUBLIC_WORKS.html").read_text(encoding="utf-8")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    for repo in ("gravitas-check", "mysteries-of-eleusis"):
+        url = f"https://luckygithub777.github.io/{repo}/"
+        assert markdown.count(f"[Browser experience]({url})") == 1
+        assert html.count(f'href="{url}"') == 1
+        # Keep the Guardian product README focused on Guardian itself.
+        assert url not in readme
+    assert len(LINK.findall(markdown)) == len(LINK.findall(html)) == 34
