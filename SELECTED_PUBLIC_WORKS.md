@@ -11,7 +11,7 @@ Some repositories distribute offline tools or interactive files. See each projec
 ## Security & assurance
 
 - [cissp](https://github.com/LuckyGitHub777/cissp)
-- [guardian assurance public](https://github.com/LuckyGitHub777/guardian-assurance-public)
+- [guardian assurance public](https://github.com/LuckyGitHub777/guardian-assurance-public) — [Hosted gallery](https://luckygithub777.github.io/guardian-assurance-public/)
 - [ssl certificate status](https://github.com/LuckyGitHub777/ssl-certificate-status)
 - [gravitas check](https://github.com/LuckyGitHub777/gravitas-check) — [Browser experience](https://luckygithub777.github.io/gravitas-check/)
 - [xss defense studio](https://github.com/LuckyGitHub777/xss-defense-studio)
@@ -58,4 +58,4 @@ Some repositories distribute offline tools or interactive files. See each projec
 
 This collection is intentionally static, requires no service, analytics, scheduled workflow, or external integration, and is updated only for an intentional new public release. It does not replace release-specific verification, usage rights, or privacy review.
 
-**Optional local visual gallery:** [Download the single-file HTML gallery](SELECTED_PUBLIC_WORKS.html) from GitHub's file viewer using **Download raw file**, then open it locally. This is not a hosted website; the Markdown list above is the always-accessible GitHub version. No external dependencies or telemetry are required.
+**Hosted visual gallery:** [Browse Selected Public Works on GitHub Pages](https://luckygithub777.github.io/guardian-assurance-public/). The same single-file HTML gallery is available as [`SELECTED_PUBLIC_WORKS.html`](SELECTED_PUBLIC_WORKS.html) for offline use; the Markdown list above remains available directly on GitHub. No external dependencies or telemetry are required.
