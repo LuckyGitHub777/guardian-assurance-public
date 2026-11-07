@@ -4,6 +4,8 @@
 
 Verify before publishing. Evidence before claims.
 
+**GitHub Pages:** [Selected Public Works](https://luckygithub777.github.io/guardian-assurance-public/) is a separate static gallery served from this repository. It is not the Guardian CLI, a security certification, or an endorsement of the linked projects.
+
 Guardian is a local-first, read-only publication assurance tool that verifies a repository before release and produces evidence bound to the exact revision examined.
 
 ## What you can do with it
