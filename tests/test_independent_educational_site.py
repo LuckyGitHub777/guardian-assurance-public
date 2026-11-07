@@ -1,4 +1,4 @@
-"""Website release contract: a standalone public page, not private manuscript publication.
+"""Website release contract: a standalone educational page with no external IO.
 
 Every assertion is offline and exact-source scoped; live HTTPS evidence is separate.
 """
@@ -18,7 +18,7 @@ def test_educational_site_is_independent_and_no_external_io():
     assert '<a class="skip" href="#content">' in html
     assert '<meta name="viewport"' in html
     assert "Euler's formula states" in html
-    assert "not reproduce or release any private manuscript" in html
+    assert "does not claim institutional affiliation or scientific peer review" in html
     assert "does not, on its own, establish claims about physics" in html
     for forbidden in (
         "<script", "<iframe", "<form", "<img", "<link rel=\"stylesheet\"",
@@ -46,4 +46,4 @@ def test_public_site_is_discoverable_without_changing_source_gallery_count():
     repo_links = r"https://github[.]com/LuckyGitHub777/([a-z0-9-]+)"
     assert len(re.findall(repo_links, md)) == 34
     assert len(re.findall(repo_links, gallery)) == 34
-    assert "does not publish a private manuscript" in gallery
+    assert "educational page is separate from the 34 project source listings" in gallery
