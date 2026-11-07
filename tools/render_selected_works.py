@@ -93,11 +93,12 @@ def render_html(collections, works):
                 f'aria-label="View source repository for {title}" target="_blank" rel="noopener noreferrer">'
                 'View the source</a></div></article>'
             )
+        cards_html = "\n".join(cards)
         groups.append(
             f'<section class="group" data-collection="{ident}" data-group aria-labelledby="heading-{ident}">'
             f'<div class="group-title"><h2 id="heading-{ident}">{escape(collection["title"])}</h2>'
             f'<span>{len(selected)} {"work" if len(selected) == 1 else "works"}</span></div>'
-            f'<div class="cards">{"\n".join(cards)}</div></section>'
+            f'<div class="cards">{cards_html}</div></section>'
         )
     return controls + "\n" + "\n".join(groups)
 
