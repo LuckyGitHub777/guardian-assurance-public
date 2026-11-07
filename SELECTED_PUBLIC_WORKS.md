@@ -13,7 +13,7 @@ Some repositories also provide downloadable software or files. A website showcas
 - [cissp](https://luckygithub777.github.io/cissp/) — [View source repository](https://github.com/LuckyGitHub777/cissp)
 - [guardian assurance public](https://luckygithub777.github.io/guardian-assurance-public/) — [View source repository](https://github.com/LuckyGitHub777/guardian-assurance-public)
 - [ssl certificate status](https://luckygithub777.github.io/ssl-certificate-status/) — [View source repository](https://github.com/LuckyGitHub777/ssl-certificate-status)
-- [gravitas check](https://luckygithub777.github.io/gravitas-check/) — [View source repository](https://github.com/LuckyGitHub777/gravitas-check)
+- [gravitas check](https://luckygithub777.github.io/gravitas-check/) — [View source repository](https://github.com/LuckyGitHub777/gravitas-check) · [Browser experience](https://luckygithub777.github.io/gravitas-check/)
 - [xss defense studio](https://luckygithub777.github.io/xss-defense-studio/) — [View source repository](https://github.com/LuckyGitHub777/xss-defense-studio)
 
 ## Learning & practical tools
@@ -47,7 +47,7 @@ Some repositories also provide downloadable software or files. A website showcas
 ## Creative & contemplative experiences
 
 - [blessed bible media](https://luckygithub777.github.io/blessed-bible-media/) — [View source repository](https://github.com/LuckyGitHub777/blessed-bible-media)
-- [mysteries of eleusis](https://luckygithub777.github.io/mysteries-of-eleusis/) — [View source repository](https://github.com/LuckyGitHub777/mysteries-of-eleusis)
+- [mysteries of eleusis](https://luckygithub777.github.io/mysteries-of-eleusis/) — [View source repository](https://github.com/LuckyGitHub777/mysteries-of-eleusis) · [Browser experience](https://luckygithub777.github.io/mysteries-of-eleusis/)
 - [seven stages alchemy experience](https://luckygithub777.github.io/seven-stages-alchemy-experience/) — [View source repository](https://github.com/LuckyGitHub777/seven-stages-alchemy-experience)
 - [cube experience 22 paths](https://luckygithub777.github.io/cube-experience-22-paths/) — [View source repository](https://github.com/LuckyGitHub777/cube-experience-22-paths)
 - [radiance light and form](https://luckygithub777.github.io/radiance-light-and-form/) — [View source repository](https://github.com/LuckyGitHub777/radiance-light-and-form)
