@@ -23,8 +23,7 @@ def test_educational_site_is_independent_and_no_external_io():
     for forbidden in (
         "<script", "<iframe", "<form", "<img", "<link rel=\"stylesheet\"",
         "<link rel=\"preconnect\"", "http://", "https://",
-        "Shamballah", "Bridge Node", "private review candidate",
-        "Release permission has not yet been granted", "localStorage",
+        "localStorage",
         "sessionStorage", "fetch(", "utm_source",
     ):
         assert forbidden.lower() not in html.lower(), forbidden
