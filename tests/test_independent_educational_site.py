@@ -3,6 +3,7 @@
 Every assertion is offline and exact-source scoped; live HTTPS evidence is separate.
 """
 from pathlib import Path
+import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,7 +45,8 @@ def test_public_site_is_discoverable_without_changing_source_gallery_count():
     assert "https://github.com/LuckyGitHub777/" not in readme
     assert gallery.count('href="./divine-architecture/"') == 1
     repo_links = r"https://github[.]com/LuckyGitHub777/([a-z0-9-]+)"
-    assert len(re.findall(repo_links, md)) == 34
-    assert len(re.findall(repo_links, gallery)) == 34
-    assert "An independent educational study, separate from the 34 featured project listings" in gallery
+    total = len(json.loads((ROOT / "collection" / "catalog.json").read_text(encoding="utf-8"))["works"])
+    assert len(re.findall(repo_links, md)) == total
+    assert len(re.findall(repo_links, gallery)) == total
+    assert "A separate study in mathematics, form, and reflection" in gallery
     assert '<aside class="featured-note" aria-label="Additional study">' in gallery
