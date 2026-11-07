@@ -4,6 +4,10 @@ A browseable collection of **34 independently published GitHub source repositori
 
 Some repositories distribute offline tools or interactive files. See each project's own README for use instructions, rights and limitations. **Public access does not imply an open-source license, ownership certification, or endorsement by Guardian.** Original private repositories, historical records, unpublished release candidates and internal acceptance material are intentionally excluded.
 
+## Independent educational website
+
+- [Euler's identity: Mathematical Form and Reflection](https://luckygithub777.github.io/guardian-assurance-public/divine-architecture/) — an independent, single-page educational website, separate from the 34 public-source repository entries. This page does not publish any private manuscript or claim scientific or institutional endorsement.
+
 ## Security & assurance
 
 - [cissp](https://github.com/LuckyGitHub777/cissp)
