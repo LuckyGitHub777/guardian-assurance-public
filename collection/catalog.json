@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "collections": [
+    {
+      "id": "security",
+      "title": "Security & Assurance"
+    },
+    {
+      "id": "learning",
+      "title": "Learning & Practice"
+    },
+    {
+      "id": "science",
+      "title": "Science & Inquiry"
+    },
+    {
+      "id": "creative",
+      "title": "Art & Expression"
+    }
+  ],
+  "works": [
+    {
+      "collection": "security",
+      "title": "CISSP",
+      "summary": "Eight security domains presented through a clear, visual study atlas",
+      "site": "https://luckygithub777.github.io/cissp/",
+      "source": "https://github.com/LuckyGitHub777/cissp"
+    },
+    {
+      "collection": "security",
+      "title": "Guardian Assurance",
+      "summary": "A considered look at publication readiness, evidence, and responsible release decisions",
+      "site": "https://luckygithub777.github.io/guardian-assurance-public/",
+      "source": "https://github.com/LuckyGitHub777/guardian-assurance-public"
+    },
+    {
+      "collection": "security",
+      "title": "SSL Certificate Status",
+      "summary": "Understand certificate validity, expiry, and the limits of a date alone",
+      "site": "https://luckygithub777.github.io/ssl-certificate-status/",
+      "source": "https://github.com/LuckyGitHub777/ssl-certificate-status"
+    },
+    {
+      "collection": "security",
+      "title": "Gravitas Check",
+      "summary": "Compare two sample pages to discover what gives a message weight",
+      "site": "https://luckygithub777.github.io/gravitas-check/",
+      "source": "https://github.com/LuckyGitHub777/gravitas-check",
+      "browser_experience": true
+    },
+    {
+      "collection": "security",
+      "title": "XSS Defense Studio",
+      "summary": "Explore safe rendering and the boundaries that protect browser output",
+      "site": "https://luckygithub777.github.io/xss-defense-studio/",
+      "source": "https://github.com/LuckyGitHub777/xss-defense-studio"
+    },
+    {
+      "collection": "learning",
+      "title": "Python Foundations",
+      "summary": "Python fundamentals unfolded across four approachable visual chapters",
+      "site": "https://luckygithub777.github.io/python-foundations-learning/",
+      "source": "https://github.com/LuckyGitHub777/python-foundations-learning"
+    },
+    {
+      "collection": "learning",
+      "title": "AI Project Foundations",
+      "summary": "Structure a thoughtful AI project with reusable instructions and templates",
+      "site": "https://luckygithub777.github.io/ai-project-learning-starter/",
+      "source": "https://github.com/LuckyGitHub777/ai-project-learning-starter"
+    },
+    {
+      "collection": "learning",
+      "title": "AI Workflow Learning Kit",
+      "summary": "Bring order to decisions, sources, and risks through reusable worksheets",
+      "site": "https://luckygithub777.github.io/ai-workflow-learning-kit/",
+      "source": "https://github.com/LuckyGitHub777/ai-workflow-learning-kit"
+    },
+    {
+      "collection": "learning",
+      "title": "Bash Scripting Foundations",
+      "summary": "Three approachable shell exercises with clear, safe previews",
+      "site": "https://luckygithub777.github.io/bash-scripting-foundations/",
+      "source": "https://github.com/LuckyGitHub777/bash-scripting-foundations"
+    },
+    {
+      "collection": "learning",
+      "title": "Transcribe Audio Engine Lab",
+      "summary": "Compare transcription approaches through illustrative workflows",
+      "site": "https://luckygithub777.github.io/transcribe-audio-engine-lab/",
+      "source": "https://github.com/LuckyGitHub777/transcribe-audio-engine-lab"
+    },
+    {
+      "collection": "learning",
+      "title": "Business Decision Toolkit",
+      "summary": "Examine assumptions and alternatives before choosing a direction",
+      "site": "https://luckygithub777.github.io/business-decision-toolkit/",
+      "source": "https://github.com/LuckyGitHub777/business-decision-toolkit"
+    },
+    {
+      "collection": "learning",
+      "title": "Everyday Carry",
+      "summary": "Create an everyday carry plan using what you already own",
+      "site": "https://luckygithub777.github.io/edc-carry-planning-experience/",
+      "source": "https://github.com/LuckyGitHub777/edc-carry-planning-experience"
+    },
+    {
+      "collection": "learning",
+      "title": "Caller ID Lookup Launcher",
+      "summary": "Review number formatting before selecting a third-party lookup",
+      "site": "https://luckygithub777.github.io/caller-id-lookup-launcher/",
+      "source": "https://github.com/LuckyGitHub777/caller-id-lookup-launcher"
+    },
+    {
+      "collection": "learning",
+      "title": "Tagalog Quiz",
+      "summary": "Discover the foundations of quiz practice and spaced review",
+      "site": "https://luckygithub777.github.io/tagalog-quiz-core-lab/",
+      "source": "https://github.com/LuckyGitHub777/tagalog-quiz-core-lab"
+    },
+    {
+      "collection": "learning",
+      "title": "Daily Aim Practice",
+      "summary": "Choose a meaningful action, reflect, and keep your notes",
+      "site": "https://luckygithub777.github.io/daily-aim-practice/",
+      "source": "https://github.com/LuckyGitHub777/daily-aim-practice"
+    },
+    {
+      "collection": "science",
+      "title": "Project Blue Box Signal Archive",
+      "summary": "Three fictional signals presented as an invitation to interpret and explore",
+      "site": "https://luckygithub777.github.io/project-blue-box-signal-archive/",
+      "source": "https://github.com/LuckyGitHub777/project-blue-box-signal-archive"
+    },
+    {
+      "collection": "science",
+      "title": "Euler’s Identity",
+      "summary": "Explore the elegance of complex rotation, circles, matrices, and phase",
+      "site": "https://eulers.id/",
+      "source": "https://github.com/LuckyGitHub777/eulers-identity-interactive"
+    },
+    {
+      "collection": "science",
+      "title": "Digital Preservation",
+      "summary": "Examine 5,184 synthetic scenarios in digital preservation",
+      "site": "https://luckygithub777.github.io/digital-preservation-decision-lab/",
+      "source": "https://github.com/LuckyGitHub777/digital-preservation-decision-lab"
+    },
+    {
+      "collection": "science",
+      "title": "UAP Reporting Methods",
+      "summary": "Study fictional sighting records with care, clarity, and restraint",
+      "site": "https://luckygithub777.github.io/uap-reporting-methodology-lab/",
+      "source": "https://github.com/LuckyGitHub777/uap-reporting-methodology-lab"
+    },
+    {
+      "collection": "science",
+      "title": "Quantum Classical Factoring Lab",
+      "summary": "Compare classical factoring with the requirements of Shor’s algorithm",
+      "site": "https://luckygithub777.github.io/quantum-classical-factoring-lab/",
+      "source": "https://github.com/LuckyGitHub777/quantum-classical-factoring-lab"
+    },
+    {
+      "collection": "science",
+      "title": "Chronovisor Evidence Lab",
+      "summary": "Follow an illustrative account while distinguishing evidence from uncertainty",
+      "site": "https://luckygithub777.github.io/chronovisor-evidence-lab/",
+      "source": "https://github.com/LuckyGitHub777/chronovisor-evidence-lab"
+    },
+    {
+      "collection": "science",
+      "title": "Nootropics Evidence Map",
+      "summary": "A considered map of claims, observations, and source quality",
+      "site": "https://luckygithub777.github.io/nootropics-evidence-map/",
+      "source": "https://github.com/LuckyGitHub777/nootropics-evidence-map"
+    },
+    {
+      "collection": "science",
+      "title": "Two-Pole Evidence Gates",
+      "summary": "Explore how evidence thresholds preserve human decision authority",
+      "site": "https://luckygithub777.github.io/two-pole-evidence-gates-lab/",
+      "source": "https://github.com/LuckyGitHub777/two-pole-evidence-gates-lab"
+    },
+    {
+      "collection": "science",
+      "title": "Truth & Evidence",
+      "summary": "A practical approach to evaluating claims and their supporting sources",
+      "site": "https://luckygithub777.github.io/truth-evidence-review-toolkit/",
+      "source": "https://github.com/LuckyGitHub777/truth-evidence-review-toolkit"
+    },
+    {
+      "collection": "science",
+      "title": "SEG Evidence Literacy Toolkit",
+      "summary": "Study the distinction between extraordinary claims and documented observations",
+      "site": "https://luckygithub777.github.io/seg-evidence-literacy-toolkit/",
+      "source": "https://github.com/LuckyGitHub777/seg-evidence-literacy-toolkit"
+    },
+    {
+      "collection": "science",
+      "title": "Claim Preregistration Methods",
+      "summary": "Shape a testing plan before illustrative results are revealed",
+      "site": "https://luckygithub777.github.io/claim-preregistration-methods/",
+      "source": "https://github.com/LuckyGitHub777/claim-preregistration-methods"
+    },
+    {
+      "collection": "science",
+      "title": "Golden Ratio Explorer",
+      "summary": "An exploration of golden-ratio geometry and optional sound relationships",
+      "site": "https://luckygithub777.github.io/golden-ratio-frequency-explorer/",
+      "source": "https://github.com/LuckyGitHub777/golden-ratio-frequency-explorer"
+    },
+    {
+      "collection": "creative",
+      "title": "Blessed Bible Media",
+      "summary": "An intimate gallery of faith-inspired visual reflections",
+      "site": "https://luckygithub777.github.io/blessed-bible-media/",
+      "source": "https://github.com/LuckyGitHub777/blessed-bible-media"
+    },
+    {
+      "collection": "creative",
+      "title": "Mysteries of Eleusis",
+      "summary": "A seven-part encounter with myth, symbolism, and history",
+      "site": "https://luckygithub777.github.io/mysteries-of-eleusis/",
+      "source": "https://github.com/LuckyGitHub777/mysteries-of-eleusis",
+      "browser_experience": true
+    },
+    {
+      "collection": "creative",
+      "title": "Seven Stages of Alchemy",
+      "summary": "Seven symbolic movements for reflecting on a meaningful question",
+      "site": "https://luckygithub777.github.io/seven-stages-alchemy-experience/",
+      "source": "https://github.com/LuckyGitHub777/seven-stages-alchemy-experience"
+    },
+    {
+      "collection": "creative",
+      "title": "Cube Experience · 22 Paths",
+      "summary": "Explore twenty-two symbolic positions and the paths between them",
+      "site": "https://luckygithub777.github.io/cube-experience-22-paths/",
+      "source": "https://github.com/LuckyGitHub777/cube-experience-22-paths"
+    },
+    {
+      "collection": "creative",
+      "title": "Radiance · Light and Form",
+      "summary": "An interactive study of geometric light, color, and motion",
+      "site": "https://luckygithub777.github.io/radiance-light-and-form/",
+      "source": "https://github.com/LuckyGitHub777/radiance-light-and-form"
+    },
+    {
+      "collection": "creative",
+      "title": "Eclipse Theta Seven",
+      "summary": "A guided reflection that returns every decision to human judgment",
+      "site": "https://luckygithub777.github.io/eclipse-theta-seven-reflection/",
+      "source": "https://github.com/LuckyGitHub777/eclipse-theta-seven-reflection"
+    },
+    {
+      "collection": "creative",
+      "title": "Aeon Tempus",
+      "summary": "A symbolic archive for reflection, with locally controlled exports",
+      "site": "https://luckygithub777.github.io/aeon-tempus-reflection-archive/",
+      "source": "https://github.com/LuckyGitHub777/aeon-tempus-reflection-archive"
+    }
+  ]
+}
