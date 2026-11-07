@@ -44,3 +44,15 @@ def test_published_browser_experiences_are_visible_in_both_collection_formats():
         # Keep the Guardian product README focused on Guardian itself.
         assert url not in readme
     assert len(LINK.findall(markdown)) == len(LINK.findall(html)) == 34
+
+
+def test_gallery_explains_project_vs_source_and_new_tab_behavior():
+    """The public gallery explicitly describes navigation and its custom domain."""
+    html = (ROOT / "SELECTED_PUBLIC_WORKS.html").read_text(encoding="utf-8")
+    markdown = (ROOT / "SELECTED_PUBLIC_WORKS.md").read_text(encoding="utf-8")
+    assert "Project titles open websites in a new tab" in html
+    assert "View source repository” opens the corresponding public GitHub source in a new tab" in html
+    assert "33 project URLs use GitHub Pages; Euler’s Identity uses eulers.id." in html
+    assert "**33 GitHub Pages project URLs**" in markdown
+    assert "Gallery links open in a new tab." in markdown
+    assert html.count('target="_blank"') == 68
