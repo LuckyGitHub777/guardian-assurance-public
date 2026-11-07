@@ -13,7 +13,7 @@ Some repositories distribute offline tools or interactive files. See each projec
 - [cissp](https://github.com/LuckyGitHub777/cissp)
 - [guardian assurance public](https://github.com/LuckyGitHub777/guardian-assurance-public)
 - [ssl certificate status](https://github.com/LuckyGitHub777/ssl-certificate-status)
-- [gravitas check](https://github.com/LuckyGitHub777/gravitas-check)
+- [gravitas check](https://github.com/LuckyGitHub777/gravitas-check) — [Browser experience](https://luckygithub777.github.io/gravitas-check/)
 - [xss defense studio](https://github.com/LuckyGitHub777/xss-defense-studio)
 
 ## Learning & practical tools
@@ -47,7 +47,7 @@ Some repositories distribute offline tools or interactive files. See each projec
 ## Creative & contemplative experiences
 
 - [blessed bible media](https://github.com/LuckyGitHub777/blessed-bible-media)
-- [mysteries of eleusis](https://github.com/LuckyGitHub777/mysteries-of-eleusis)
+- [mysteries of eleusis](https://github.com/LuckyGitHub777/mysteries-of-eleusis) — [Browser experience](https://luckygithub777.github.io/mysteries-of-eleusis/)
 - [seven stages alchemy experience](https://github.com/LuckyGitHub777/seven-stages-alchemy-experience)
 - [cube experience 22 paths](https://github.com/LuckyGitHub777/cube-experience-22-paths)
 - [radiance light and form](https://github.com/LuckyGitHub777/radiance-light-and-form)
