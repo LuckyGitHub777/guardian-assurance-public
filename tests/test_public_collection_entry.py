@@ -18,7 +18,11 @@ def test_gallery_and_markdown_contain_same_public_repositories():
 
 def test_static_entrypoint_has_no_outbound_dependency_or_unsafe_input():
     source = (ROOT / "index.html").read_text(encoding="utf-8")
-    assert '<meta http-equiv="refresh" content="0;url=./SELECTED_PUBLIC_WORKS.html">' in source
+    assert '<title>Guardian | Publication Assurance</title>' in source
+    assert '<meta name="description"' in source
+    assert 'guardian-pa verify .' in source
+    assert '<h1>Publish with proof.' in source
+    assert '<meta http-equiv="refresh"' not in source
     assert 'href="./SELECTED_PUBLIC_WORKS.html"' in source
     assert 'href="./SELECTED_PUBLIC_WORKS.md"' in source
     assert 'default-src \'none\'' in source
