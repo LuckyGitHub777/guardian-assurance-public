@@ -1,18 +1,20 @@
 """Offline public-collection invariants. No network, secrets or release automation."""
 from pathlib import Path
+import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
 OWNER = "LuckyGitHub777"
 LINK = re.compile(r"https://github[.]com/" + OWNER + r"/([a-z0-9-]+)")
+WORKS = json.loads((ROOT / "collection" / "catalog.json").read_text(encoding="utf-8"))["works"]
 
 
 def test_gallery_and_markdown_contain_same_public_repositories():
     markdown = (ROOT / "SELECTED_PUBLIC_WORKS.md").read_text(encoding="utf-8")
     html = (ROOT / "SELECTED_PUBLIC_WORKS.html").read_text(encoding="utf-8")
     a, b = LINK.findall(markdown), LINK.findall(html)
-    assert len(a) == len(set(a)) == 34
-    assert len(b) == len(set(b)) == 34
+    assert len(a) == len(set(a)) == len(WORKS)
+    assert len(b) == len(set(b)) == len(WORKS)
     assert set(a) == set(b)
 
 
@@ -43,16 +45,16 @@ def test_published_browser_experiences_are_visible_in_both_collection_formats():
         assert html.count(f'href="{url}"') == 1
         # Keep the Guardian product README focused on Guardian itself.
         assert url not in readme
-    assert len(LINK.findall(markdown)) == len(LINK.findall(html)) == 34
+    assert len(LINK.findall(markdown)) == len(LINK.findall(html)) == len(WORKS)
 
 
 def test_gallery_explains_project_vs_source_and_new_tab_behavior():
     """The public gallery explicitly describes navigation and its custom domain."""
     html = (ROOT / "SELECTED_PUBLIC_WORKS.html").read_text(encoding="utf-8")
     markdown = (ROOT / "SELECTED_PUBLIC_WORKS.md").read_text(encoding="utf-8")
-    assert "Project titles open websites in a new tab" in html
-    assert "View source repository” opens the corresponding public GitHub source in a new tab" in html
-    assert "33 project URLs use GitHub Pages; Euler’s Identity uses eulers.id." in html
-    assert "**33 GitHub Pages project URLs**" in markdown
+    assert "Project titles open the experience in a new tab" in html
+    assert "Source links open the corresponding public repository" in html
+    pages = sum(w["site"].startswith("https://luckygithub777.github.io/") for w in WORKS)
+    assert f"**{pages} GitHub Pages project URLs**" in markdown
     assert "Gallery links open in a new tab." in markdown
-    assert html.count('target="_blank"') == 68
+    assert html.count('target="_blank"') == len(WORKS) * 2
