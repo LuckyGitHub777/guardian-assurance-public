@@ -2,7 +2,7 @@
 
 A browseable collection of **34 public repositories**, with **33 GitHub Pages project URLs** and **one custom-domain experience** (Euler's Identity at `https://eulers.id/`). Select a project title to open its website, or select **View source repository** to inspect its public GitHub files. Gallery links open in a new tab. Websites range from interactive browser applications to educational showcases of code-based tools. GitHub deployment success is not independent end-to-end visitor certification.
 
-Some repositories also provide downloadable software or files. A website showcase does not imply that a Python or CLI program runs inside the web page. See each project's own README for instructions, rights and limitations. **Public access does not imply an open-source license, ownership certification, or endorsement by Guardian.** Original private repositories, historical records, unpublished release candidates and internal acceptance material are intentionally excluded.
+Some repositories also provide downloadable software or files. A website showcase does not imply that a Python or CLI program runs inside the web page. See each project's own README for instructions, rights and limitations. **Public access does not imply an open-source license, ownership certification, or endorsement by Guardian.**
 
 ## Independent educational website
 
