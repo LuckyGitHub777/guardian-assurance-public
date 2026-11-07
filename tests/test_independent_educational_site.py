@@ -36,7 +36,13 @@ def test_public_site_is_discoverable_without_changing_source_gallery_count():
     gallery = (ROOT / "SELECTED_PUBLIC_WORKS.html").read_text(encoding="utf-8")
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     assert md.count(PAGE_URL) == 1
-    assert readme.count(PAGE_URL) == 1
+    # Keep the Guardian product README scoped to Guardian. The independent
+    # educational site belongs in the dedicated gallery navigation, not here.
+    assert PAGE_URL not in readme
+    assert "## Independent educational website" not in readme
+    assert "## Independent public works" not in readme
+    assert "Guardian is a local-first, read-only publication assurance tool" in readme
+    assert "https://github.com/LuckyGitHub777/" not in readme
     assert gallery.count('href="./divine-architecture/"') == 1
     repo_links = r"https://github[.]com/LuckyGitHub777/([a-z0-9-]+)"
     assert len(re.findall(repo_links, md)) == 34
