@@ -58,4 +58,4 @@ Some repositories also provide downloadable software or files. A website showcas
 
 This collection is intentionally static, requires no service, analytics, scheduled workflow, or external integration, and is updated only for an intentional new public release. It does not replace release-specific verification, usage rights, or privacy review.
 
-**Hosted visual gallery:** [Browse Selected Public Works on GitHub Pages](https://luckygithub777.github.io/guardian-assurance-public/). The same single-file HTML gallery is available as [`SELECTED_PUBLIC_WORKS.html`](SELECTED_PUBLIC_WORKS.html) for offline use; the Markdown list above remains available directly on GitHub. No external dependencies or telemetry are required.
+**Hosted visual gallery:** [Browse Selected Public Works on GitHub Pages](https://luckygithub777.github.io/guardian-assurance-public/). The same single-file HTML gallery is available as [`SELECTED_PUBLIC_WORKS.html`](SELECTED_PUBLIC_WORKS.html) for convenient viewing on your own device; the Markdown list above remains available directly on GitHub. No external dependencies or telemetry are required.
