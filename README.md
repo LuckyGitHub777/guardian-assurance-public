@@ -153,6 +153,10 @@ The release gate requires executable tests, adversarial negative cases, privacy/
 
 Apache License 2.0. See [`LICENSE`](LICENSE).
 
+## Independent educational website
+
+The existing static Pages collection also serves [Euler's identity: Mathematical Form and Reflection](https://luckygithub777.github.io/guardian-assurance-public/divine-architecture/) as a standalone educational page. It is not a public release of the separate private manuscript, an institutional statement, or a new source repository. This uses the existing Pages site without a new domain, external service, or scheduled workflow.
+
 ## Independent public works
 
 Explore the [searchable public collection](https://luckygithub777.github.io/guardian-assurance-public/) or browse the [GitHub-readable index](SELECTED_PUBLIC_WORKS.md) of **34 independently published source repositories**. These projects are independent of Guardian: inclusion does not assert Guardian certification, rights clearance, a common license, or that every work has a separately hosted app.
